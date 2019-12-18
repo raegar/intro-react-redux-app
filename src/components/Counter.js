@@ -17,22 +17,20 @@ const mapStateToProps = (state) => {
   }
 
 class Counter extends Component {
-    state = {
-        number: 0
-      }
-      addOne = () => {
-            this.props.dispatch({ type: 'ADD_ONE' });
-        }
       
-      minusOne = () => {
+    addOne = () => {
+        this.props.dispatch({ type: 'ADD_ONE' });
+    }
+      
+    minusOne = () => {
         this.props.dispatch({ type: 'MINUS_ONE' });
-      }
+    }
 
   render() {
     return (
       <div className="App" >
         <header className="App-header">
-          <h1>{this.state.number}</h1>
+          <h1>{this.props.number}</h1>
           <div style={containerStyle}>
             <button type="button" style={buttonStyle} onClick={this.minusOne}>-</button>
             <button type="button" style={buttonStyle} onClick={this.addOne}>+</button>
