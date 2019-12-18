@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
-class DisplayNumber extends Component {
-  render() {
+function DisplayNumber(props) {
     return (
-          <h1>{this.props.number}</h1>
+          <h1>{props.number}</h1>
     );
-  }
 }
 
 const mapStateToProps = (state) => {
