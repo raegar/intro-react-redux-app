@@ -12,12 +12,6 @@ const buttonStyle = {
   height: '40px'
 }
 
-const mapStateToProps = (state) => {
-    return {
-      number: state.number
-    };
-  }
-
 class Counter extends Component {
       
     addOne = () => {
@@ -42,4 +36,11 @@ class Counter extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    number: state.number
+  };
+}
+
 export default connect(mapStateToProps)(Counter);
