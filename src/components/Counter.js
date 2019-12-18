@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import DisplayNumber from './DisplayNumber';
+
 const containerStyle = {
   display: 'flex'
 }
@@ -30,7 +32,7 @@ class Counter extends Component {
     return (
       <div className="App" >
         <header className="App-header">
-          <h1>{this.props.number}</h1>
+          <DisplayNumber />
           <div style={containerStyle}>
             <button type="button" style={buttonStyle} onClick={this.minusOne}>-</button>
             <button type="button" style={buttonStyle} onClick={this.addOne}>+</button>
