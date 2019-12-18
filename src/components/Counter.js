@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import DisplayNumber from './DisplayNumber';
@@ -12,29 +12,27 @@ const buttonStyle = {
   height: '40px'
 }
 
-class Counter extends Component {
+function Counter(props) {
       
-    addOne = () => {
-        this.props.dispatch({ type: 'ADD_ONE' });
-    }
-      
-    minusOne = () => {
-        this.props.dispatch({ type: 'MINUS_ONE' });
-    }
-
-  render() {
-    return (
-      <div className="App" >
-        <header className="App-header">
-          <DisplayNumber />
-          <div style={containerStyle}>
-            <button type="button" style={buttonStyle} onClick={this.minusOne}>-</button>
-            <button type="button" style={buttonStyle} onClick={this.addOne}>+</button>
-          </div>
-        </header>
-      </div>
-    );
+  const addOne = () => {
+      props.dispatch({ type: 'ADD_ONE' });
   }
+    
+  const minusOne = () => {
+      props.dispatch({ type: 'MINUS_ONE' });
+  }
+
+  return (
+    <div className="App" >
+      <header className="App-header">
+        <DisplayNumber />
+        <div style={containerStyle}>
+          <button type="button" style={buttonStyle} onClick={minusOne}>-</button>
+          <button type="button" style={buttonStyle} onClick={addOne}>+</button>
+        </div>
+      </header>
+    </div>
+  );
 }
 
 const mapStateToProps = (state) => {
